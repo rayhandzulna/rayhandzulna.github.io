@@ -7,275 +7,464 @@
 <meta name="description" content="Portofolio Rayhan Dzulna Fahlevi, System & Data Analyst dan Web Developer dengan pengalaman di Kementerian Keuangan RI dan KPU RI.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@600;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --navy:#1f3a4a; --navy-2:#2c4f63; --bronze:#a8895c; --pearl:#eeebe8; --paper:#f9f8f6; --ink:#1b2a33; --muted:#5d6b73;
+  --ink:#111827;--ink-2:#243044;--muted:#667085;--line:#e6e9ef;--bg:#f7f8fb;--card:#fff;
+  --navy:#0b1220;--navy-2:#121c2e;--accent:#c8a96b;--accent-2:#ead9ad;--accent-soft:#f7f0e3;
+  --shadow:0 18px 45px rgba(15,23,42,.08);--shadow-sm:0 8px 24px rgba(15,23,42,.06);--radius:18px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-body{font-family:"Open Sans",system-ui,sans-serif;background:var(--paper);color:var(--ink);line-height:1.7;font-size:17px}
-h1,h2,h3{font-family:Poppins,system-ui,sans-serif;color:var(--navy);line-height:1.15}
+body{font:400 16px/1.7 "IBM Plex Sans",system-ui,sans-serif;color:var(--ink);background:var(--bg);overflow-x:hidden}
+h1,h2,h3,h4{font-family:"Bricolage Grotesque",sans-serif;line-height:1.15}
 a{color:inherit}
-:focus-visible{outline:3px solid var(--bronze);outline-offset:3px}
-.wrap{max-width:1000px;margin:0 auto;padding:0 24px}
+img{display:block;max-width:100%}
+:focus-visible{outline:3px solid var(--accent);outline-offset:4px}
 
-/* nav */
-nav{position:sticky;top:0;z-index:10;background:rgba(249,248,246,.92);backdrop-filter:blur(8px);border-bottom:1px solid #ddd8d2}
-nav .wrap{display:flex;gap:22px;align-items:center;justify-content:space-between;height:60px}
-nav b{font-family:Poppins,sans-serif;color:var(--navy)}
-nav ul{display:flex;gap:20px;list-style:none;font-size:15px;overflow-x:auto}
-nav ul a{text-decoration:none;color:var(--muted);white-space:nowrap}
-nav ul a:hover{color:var(--navy)}
+.wrap{display:grid;grid-template-columns:310px minmax(0,1fr);min-height:100vh}
 
-/* hero */
-.hero{background:var(--pearl);padding:96px 0 80px;border-bottom:6px solid var(--bronze)}
-.hero .wrap{display:grid;grid-template-columns:1fr auto;gap:40px;align-items:end}
-.role{font-weight:600;color:var(--navy-2);font-size:18px;margin-bottom:14px}
-.hero h1{font-weight:800;font-size:clamp(46px,10vw,112px);letter-spacing:-.02em;color:var(--navy);
-  -webkit-text-stroke:3px var(--bronze);paint-order:stroke fill;text-shadow:5px 5px 0 rgba(168,137,92,.28)}
-.hero p{max-width:560px;margin-top:26px;font-size:19px;color:var(--ink)}
-.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
-.btn{display:inline-block;padding:12px 24px;border-radius:6px;font-weight:600;text-decoration:none;border:2px solid var(--navy)}
-.btn.main{background:var(--navy);color:#fff}
-.btn.main:hover{background:var(--navy-2)}
-.btn.alt:hover{background:var(--navy);color:#fff}
-.avatar{width:190px;height:190px;border-radius:50%;background:var(--navy);color:var(--pearl);display:grid;place-items:center;
-  font:800 56px Poppins,sans-serif;border:6px solid var(--bronze);overflow:hidden}
-.avatar img{width:100%;height:100%;object-fit:cover}
-
-/* sections */
-section{padding:84px 0}
-section.alt{background:var(--pearl)}
-h2{font-size:clamp(30px,5vw,44px);font-weight:800;margin-bottom:38px}
-h2::after{content:"";display:block;width:64px;height:5px;background:var(--bronze);margin-top:14px}
-.two{display:grid;grid-template-columns:1fr 1fr;gap:48px}
-.two p+p{margin-top:16px}
-.facts{list-style:none;border-left:4px solid var(--bronze);padding-left:22px}
-.facts li{margin-bottom:14px}
-.facts b{display:block;color:var(--navy);font-family:Poppins,sans-serif;font-size:15px}
-
-/* timeline */
-.tl{list-style:none;border-left:3px solid var(--bronze);margin-left:6px}
-.tl li{position:relative;padding:0 0 38px 30px}
-.tl li::before{content:"";position:absolute;left:-10px;top:8px;width:17px;height:17px;border-radius:50%;background:var(--navy);border:3px solid var(--paper)}
-.tl h3{font-size:21px}
-.tl .meta{color:var(--muted);font-size:15px;margin:2px 0 6px}
-.tl .role-t{font-weight:600}
-
-/* projects */
-.proj{list-style:none;border-top:2px solid var(--navy)}
-.proj li{display:grid;grid-template-columns:170px 1fr;gap:12px 36px;padding:30px 0;border-bottom:1px solid #cfc9c2}
-.proj .when{color:var(--bronze);font-weight:600;font-family:Poppins,sans-serif;font-size:15px;line-height:1.5}
-.proj .when small{display:block;color:var(--muted);font:400 14px "Open Sans",sans-serif}
-.proj h3{font-size:24px;margin-bottom:2px}
-.proj .tag{color:var(--navy-2);font-style:italic;margin-bottom:8px}
-.stack{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px;list-style:none}
-.stack li{display:block;padding:3px 12px;border:1px solid var(--navy-2);border-radius:99px;font-size:13.5px;color:var(--navy);border-bottom:1px solid var(--navy-2)}
-.proj .stack{border:0}
-
-/* skills */
-.chips{display:flex;flex-wrap:wrap;gap:10px;list-style:none}
-.chips li{background:var(--navy);color:var(--pearl);padding:8px 18px;border-radius:6px;font-weight:600;font-size:15px}
-.chips.line li{background:transparent;color:var(--navy);border:2px solid var(--bronze)}
-.skills h3{font-size:20px;margin-bottom:16px}
-
-/* cert */
-.cert{display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:center;padding:30px;background:#fff;border:2px solid var(--bronze);border-radius:10px}
-.cert .seal{width:78px;height:78px;border-radius:50%;background:var(--navy);color:var(--bronze);display:grid;place-items:center;font:800 22px Poppins,sans-serif}
-.cert h3{font-size:22px}
-.cert p{color:var(--muted)}
-
-/* contact */
-.contact{background:var(--navy);color:var(--pearl);text-align:center}
-.contact h2{color:#fff}
-.contact h2::after{margin:14px auto 0}
-.contact p{max-width:520px;margin:0 auto 28px}
-.contact .btn{border-color:var(--bronze);color:#fff;margin:5px}
-.contact .btn.main{background:var(--bronze);color:var(--navy)}
-.contact .btn:hover{background:var(--pearl);color:var(--navy);border-color:var(--pearl)}
-footer{background:#16303e;color:#a9b6bd;text-align:center;padding:22px;font-size:14px}
-
-@media (max-width:760px){
-  .hero{padding:64px 0 56px}
-  .hero .wrap{grid-template-columns:1fr}
-  .avatar{width:130px;height:130px;font-size:40px;order:-1}
-  .two{grid-template-columns:1fr;gap:32px}
-  .proj li{grid-template-columns:1fr}
-  .cert{grid-template-columns:1fr}
-  section{padding:60px 0}
+aside{
+  position:sticky;top:0;height:100vh;
+  background:radial-gradient(circle at 20% 10%,rgba(200,169,107,.13),transparent 32%),linear-gradient(180deg,var(--navy),#080e19);
+  color:#e9edf4;padding:38px 28px 28px;display:flex;flex-direction:column;gap:24px;
+  overflow:auto;border-right:1px solid rgba(255,255,255,.06);
 }
+.me{width:148px;height:148px;border-radius:50%;border:1px solid rgba(234,217,173,.45);box-shadow:0 0 0 8px rgba(200,169,107,.06),0 18px 40px rgba(0,0,0,.28)}
+aside h1{font-size:29px;color:#fff;font-weight:800;letter-spacing:-.5px}
+aside .role{color:#b8c1d0;font-size:14px;margin-top:8px;line-height:1.6}
+aside nav{margin-top:4px}
+aside nav ul{list-style:none;display:grid;gap:5px}
+aside nav a{position:relative;display:block;padding:9px 12px;border-radius:10px;text-decoration:none;color:#aeb8c9;font-size:14px;transition:.2s ease}
+aside nav a:hover{background:rgba(255,255,255,.055);color:#fff}
+aside nav a.on{background:rgba(200,169,107,.12);color:#f3dfb4}
+aside nav a.on:before{content:"";position:absolute;left:0;top:9px;bottom:9px;width:2px;background:var(--accent);border-radius:99px}
+.links{margin-top:auto;display:grid;gap:9px}
+.btn{display:block;text-align:center;padding:11px 14px;border-radius:11px;border:1px solid rgba(255,255,255,.16);text-decoration:none;font-weight:600;font-size:13px;color:#fff;transition:.2s ease}
+.btn.main{background:var(--accent);border-color:var(--accent);color:#151515}
+.btn:hover{transform:translateY(-1px);background:#fff;color:var(--ink);border-color:#fff}
+button.btn{width:100%;font-family:inherit;line-height:inherit;cursor:pointer}
+
+main{width:100%;max-width:1180px;padding:76px clamp(22px,6vw,86px) 40px;margin:0 auto}
+section{padding-bottom:92px;scroll-margin-top:28px}
+section>h2{position:relative;font-size:38px;font-weight:800;letter-spacing:-1px;margin-bottom:32px;color:var(--ink)}
+section>h2:after{content:"";display:block;width:44px;height:3px;background:var(--accent);margin-top:13px;border-radius:99px}
+.lead{font-size:18px;max-width:68ch;color:var(--ink-2)}
+.lead+.lead{margin-top:14px}
+.muted{color:var(--muted)}
+
+#tentang{padding-top:8px}
+#tentang .lead:first-of-type{font-size:22px;line-height:1.65;max-width:760px}
+.photos{display:grid;grid-template-columns:repeat(6,1fr);gap:14px;margin-top:36px}
+.photos .ph{aspect-ratio:4/3;grid-column:span 2}
+.photos .ph:nth-child(n+4){grid-column:span 3}
+
+.ph{position:relative;overflow:hidden;background:var(--accent-soft);border:1px dashed #d5c8ab;border-radius:14px;display:block}
+.ph::after{content:attr(data-file);position:absolute;inset:0;display:grid;place-items:center;padding:8px;text-align:center;font:500 11px/1.3 ui-monospace,Menlo,monospace;color:#7b6a4b;word-break:break-all}
+.ph.ok{border:0;background:none}
+.ph.ok::after{display:none}
+.ph img{position:absolute;inset:0;z-index:1;width:100%;height:100%;object-fit:cover}
+.ph.ct img{object-fit:contain}
+
+.tl{display:grid;gap:16px}
+.job{display:grid;grid-template-columns:86px 1fr;gap:22px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow-sm);transition:.22s ease}
+.job:hover,.pcard:hover,.edu:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
+.job .ph{width:86px;height:86px;border-radius:14px}
+.job h3{font-size:20px}
+.job p{color:var(--muted);font-size:14px}
+
+/* ===== PROJECT CARDS ===== */
+.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:22px}
+.pcard{
+  display:block;width:100%;text-align:left;font:inherit;color:inherit;cursor:pointer;
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  overflow:hidden;box-shadow:var(--shadow-sm);transition:.22s ease;padding:0;
+}
+.pcard .ph{aspect-ratio:16/10;border-radius:0;border-width:0 0 1px;border-bottom:1px solid var(--line)}
+.pcard .ph.ok{border-bottom:0}
+.pcard .ph img{object-position:top;transition:transform .35s ease}
+.pcard:hover .ph img{transform:scale(1.04)}
+.pcard .pb{padding:18px 20px 20px}
+.pcard h3{font-size:21px;font-weight:800;letter-spacing:-.3px}
+.pcard .pd{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:8px;font-size:13px;color:var(--muted)}
+.pcard .go{font-weight:600;color:#7d6334}
+
+/* ===== PROJECT MODAL ===== */
+.pmodal{position:fixed;inset:0;z-index:9000;display:none;align-items:flex-start;justify-content:center;padding:32px 20px;background:rgba(5,10,18,.88);backdrop-filter:blur(8px);overflow-y:auto}
+.pmodal.show{display:flex}
+.pbox{position:relative;width:min(900px,100%);background:var(--card);border-radius:20px;padding:34px;box-shadow:0 30px 80px rgba(0,0,0,.35);animation:lightboxIn .22s ease-out;margin:auto 0}
+.pbox header{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:flex-start;padding-right:46px}
+.pbox h3{font-size:30px;font-weight:800;letter-spacing:-.3px}
+.tag{font-size:12px;font-weight:700;letter-spacing:.3px;background:var(--accent-soft);color:#7d6334;padding:6px 11px;border-radius:99px;white-space:nowrap;border:1px solid #eadfc8}
+.pbox .sub{color:var(--muted);margin:8px 0 18px;font-style:italic}
+.pbox p+p{margin-top:10px}
+.meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px 24px;margin:22px 0;padding:17px 0;border-block:1px solid var(--line);font-size:13px}
+.meta dt{color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.7px}
+.meta dd{font-weight:600;margin-top:2px}
+.shots{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:13px;margin-top:20px}
+.shots .ph{aspect-ratio:16/10}
+.shots .ph img{object-fit:cover;object-position:top}
+.pclose{position:absolute;top:14px;right:14px;width:38px;height:38px;border:0;border-radius:50%;background:var(--accent-soft);color:var(--ink);font-size:23px;line-height:1;cursor:pointer;transition:.2s ease}
+.pclose:hover{background:var(--accent)}
+
+.tools{display:flex;flex-wrap:wrap;gap:8px;list-style:none}
+.tool{display:flex;align-items:center;gap:8px;padding:7px 12px 7px 8px;border:1px solid var(--line);border-radius:10px;background:#fff;font-size:13px;font-weight:500}
+.tool img{width:24px;height:24px;object-fit:contain}
+.tool .fn{display:block;font:500 10px/1.2 ui-monospace,Menlo,monospace;color:#7b8494}
+.tool.ok .fn{display:none}
+.tool:not(.ok){background:#fbf7ef;border:1px dashed #d9c9a6}
+.tools.big .tool{padding:10px 14px}
+.tools.big img{width:32px;height:32px}
+
+/* ===== SKILLS ===== */
+.skgroup+.skgroup{margin-top:28px}
+.skgroup h3{font-size:18px;margin-bottom:12px}
+.skills{list-style:none;display:flex;flex-wrap:wrap;gap:9px}
+.skills li{padding:9px 14px;background:var(--card);border:1px solid var(--line);border-radius:11px;font-size:14px;box-shadow:var(--shadow-sm)}
+.sk-tools{margin-top:34px}
+.sk-tools h3{font-size:18px;margin-bottom:12px}
+
+.edu{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-sm);transition:.22s ease}
+.edu .row{display:grid;grid-template-columns:110px 1fr;gap:22px;padding:26px;align-items:center}
+.edu .row .ph{width:110px;height:106px}
+.edu .pics{display:grid;grid-template-columns:1fr 1fr;gap:13px;padding:0 26px 26px}
+.edu .pics .ph{aspect-ratio:3/2}
+.cert{display:grid;grid-template-columns:250px 1fr;gap:32px;align-items:start}
+.cert .ph{aspect-ratio:537/760;border-radius:14px;box-shadow:var(--shadow-sm)}
+.cert .lead{margin-top:8px}
+
+footer{border-top:1px solid var(--line);padding:24px 0;color:var(--muted);font-size:13px;margin-top:4px}
+
+@media(max-width:1000px){
+  .wrap{grid-template-columns:1fr}
+  aside{position:relative;height:auto;min-height:0;display:grid;grid-template-columns:90px 1fr;align-items:center;padding:24px clamp(18px,5vw,36px);gap:16px}
+  .me{width:84px;height:84px}
+  aside h1{font-size:24px}
+  aside nav{grid-column:1/-1;order:3}
+  aside nav ul{display:flex;flex-wrap:wrap;gap:4px}
+  aside nav a{padding:8px 10px}
+  .links{grid-column:1/-1;order:4;margin:0;display:flex}
+  .links .btn{flex:1}
+  main{max-width:none;padding-top:54px}
+  .cert{grid-template-columns:1fr}
+  .cert .ph{max-width:270px}
+}
+@media(max-width:680px){
+  body{font-size:15px}
+  aside{grid-template-columns:70px 1fr;padding:18px}
+  .me{width:64px;height:64px}
+  aside h1{font-size:20px}
+  aside .role{font-size:12px}
+  aside nav ul{display:grid;grid-template-columns:1fr 1fr}
+  aside nav a{font-size:12px}
+  .links{display:grid;grid-template-columns:1fr 1fr}
+  .links .btn:first-child{grid-column:1/-1}
+  main{padding:44px 18px 28px}
+  section{padding-bottom:64px}
+  section>h2{font-size:30px;margin-bottom:25px}
+  #tentang .lead:first-of-type{font-size:18px}
+  .photos{grid-template-columns:1fr 1fr;gap:9px}
+  .photos .ph,.photos .ph:nth-child(n+4){grid-column:span 1}
+  .job{grid-template-columns:60px 1fr;gap:14px;padding:17px}
+  .job .ph{width:60px;height:60px}
+  .job h3{font-size:17px}
+  .job p{font-size:12px}
+  .pmodal{padding:12px}
+  .pbox{padding:22px 18px}
+  .pbox h3{font-size:23px}
+  .shots{grid-template-columns:1fr 1fr}
+  .edu .row{grid-template-columns:78px 1fr;padding:20px;gap:16px}
+  .edu .row .ph{width:78px;height:76px}
+  .edu .pics{padding:0 20px 20px}
+  .cert{gap:22px}
+}
+@media(max-width:420px){
+  aside nav ul{grid-template-columns:1fr}
+  .links{grid-template-columns:1fr}
+  .links .btn:first-child{grid-column:auto}
+  .photos{grid-template-columns:1fr}
+  .photos .ph,.photos .ph:nth-child(n+4){grid-column:auto}
+  .shots{grid-template-columns:1fr}
+  .edu .row{grid-template-columns:1fr}
+  .edu .row .ph{width:90px;height:88px}
+}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+/* ===== IMAGE LIGHTBOX ===== */
+.lightbox{position:fixed;inset:0;z-index:9999;display:none;align-items:center;justify-content:center;padding:24px;background:rgba(5,10,18,.88);backdrop-filter:blur(8px)}
+.lightbox.show{display:flex}
+.lightbox-panel{width:min(980px,100%);max-height:92vh;display:flex;flex-direction:column;background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.35);animation:lightboxIn .22s ease-out}
+.lightbox-media{position:relative;min-height:220px;max-height:70vh;background:#0b1220;display:flex;align-items:center;justify-content:center}
+.lightbox-media img{width:100%;height:100%;max-height:70vh;object-fit:contain}
+.lightbox-info{padding:20px 24px 22px;background:#fff}
+.lightbox-info h3{font-size:21px;margin-bottom:5px;color:var(--ink)}
+.lightbox-info p{color:var(--muted);font-size:14px}
+.lightbox-close{position:absolute;top:14px;right:14px;z-index:2;width:42px;height:42px;border:1px solid rgba(255,255,255,.25);border-radius:50%;background:rgba(8,14,25,.72);color:#fff;font-size:25px;line-height:1;cursor:pointer;display:grid;place-items:center;transition:.2s ease}
+.lightbox-close:hover{background:var(--accent);color:#111;transform:scale(1.05)}
+[data-lightbox]{cursor:zoom-in;transition:filter .2s ease}
+[data-lightbox]:hover{filter:brightness(.94)}
+@keyframes lightboxIn{from{opacity:0;transform:translateY(8px) scale(.98)}to{opacity:1;transform:translateY(0) scale(1)}}
+@media(max-width:680px){
+  .lightbox{padding:12px}
+  .lightbox-panel{border-radius:14px}
+  .lightbox-info{padding:16px 18px}
+  .lightbox-info h3{font-size:18px}
+  .lightbox-info p{font-size:13px}
+  .lightbox-close{width:38px;height:38px;font-size:22px}
+}
+
+/* ===== CONTACT POPUP ===== */
+.contact-modal{position:fixed;inset:0;z-index:9999;display:none;align-items:center;justify-content:center;padding:24px;background:rgba(5,10,18,.88);backdrop-filter:blur(8px)}
+.contact-modal.show{display:flex}
+.contact-box{position:relative;width:min(440px,100%);background:#fff;border-radius:18px;padding:28px 26px;box-shadow:0 30px 80px rgba(0,0,0,.35);animation:lightboxIn .22s ease-out}
+.contact-box h3{font-size:22px;margin-bottom:16px;padding-right:40px}
+.contact-box dl>div{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 0;border-top:1px solid var(--line)}
+.contact-box dl>div>div{min-width:0}
+.contact-box dt{color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.7px}
+.contact-box dd{font-weight:600;margin-top:2px;word-break:break-all}
+.contact-box dd a{text-decoration:none}
+.contact-box dd a:hover{color:#7d6334}
+.copy-btn{flex:none;font:600 12px/1 "IBM Plex Sans",sans-serif;padding:9px 13px;border-radius:9px;border:1px solid var(--line);background:var(--accent-soft);color:#7d6334;cursor:pointer;transition:.2s ease;min-width:78px}
+.copy-btn:hover{background:var(--accent);border-color:var(--accent);color:#151515}
+.copy-btn.done{background:#e7f5ec;border-color:#b9e0c6;color:#1f7a3f}
+.contact-close{position:absolute;top:12px;right:12px;width:36px;height:36px;border:0;border-radius:50%;background:var(--accent-soft);color:var(--ink);font-size:22px;line-height:1;cursor:pointer;transition:.2s ease}
+.contact-close:hover{background:var(--accent)}
 </style>
 </head>
 <body>
-
-<nav>
-  <div class="wrap">
-    <b>Rayhan D. Fahlevi</b>
-    <ul>
-      <li><a href="#tentang">Tentang</a></li>
-      <li><a href="#pengalaman">Pengalaman</a></li>
-      <li><a href="#project">Project</a></li>
-      <li><a href="#keahlian">Keahlian</a></li>
-      <li><a href="#kontak">Kontak</a></li>
-    </ul>
+<div class="wrap">
+<aside>
+  <span class="ph ok me" data-file="images/profile.png" id="profile" data-lightbox data-title="Foto Rayhan Dzulna Fahlevi" data-description="Foto profil pada portfolio."></span>
+  <div><h1>Rayhan Dzulna Fahlevi</h1><p class="role">System &amp; Data Analyst<br>Web Developer</p></div>
+  <nav aria-label="Navigasi"><ul>
+    <li><a href="#tentang">Tentang</a></li><li><a href="#pengalaman">Pengalaman</a></li><li><a href="#project">Project</a></li>
+    <li><a href="#pendidikan">Pendidikan</a></li><li><a href="#keahlian">Keahlian &amp; tools</a></li><li><a href="#sertifikasi">Sertifikasi</a></li>
+  </ul></nav>
+  <div class="links">
+    <button type="button" class="btn main" id="contactBtn">Kontak saya</button>
+    <a class="btn" href="https://www.linkedin.com/in/rayhan-dzulna-fahlevi" target="_blank" rel="noopener">LinkedIn</a>
   </div>
-</nav>
+</aside>
 
-<header class="hero">
-  <div class="wrap">
-    <div>
-      <p class="role">System & Data Analyst &nbsp;|&nbsp; Web Developer</p>
-      <h1>Rayhan Dzulna Fahlevi</h1>
-      <p>Membangun sistem digital berbasis data dan AI untuk instansi pemerintahan, dari pemetaan talenta hingga analisis sentimen publik.</p>
-      <div class="cta">
-        <a class="btn main" href="#project">Lihat project</a>
-        <a class="btn alt" href="#kontak">Hubungi saya</a>
-      </div>
-    </div>
-    <!-- Ganti RDF dengan foto: <img src="foto.jpg" alt="Foto Rayhan Dzulna Fahlevi"> -->
-    <div class="avatar" aria-label="Inisial Rayhan Dzulna Fahlevi">RDF</div>
-  </div>
-</header>
-
+<main>
 <section id="tentang">
-  <div class="wrap">
-    <h2>Tentang saya</h2>
-    <div class="two">
-      <div>
-        <p>Saya System & Data Analyst dan Web Developer dengan pengalaman langsung di instansi pemerintahan. Saya tertarik pada integrasi AI, pengambilan keputusan berbasis data, dan sistem digital yang berdampak.</p>
-        <p>Saya pernah bekerja di Kementerian Keuangan RI mengembangkan sistem berbasis AI untuk manajemen indikator kinerja, dan di KPU RI menangani manajemen data pemilu serta sistem informasi.</p>
-      </div>
-      <ul class="facts">
-        <li><b>Pendidikan</b>D4 Teknik Informatika, Politeknik Negeri Lhokseumawe (2021-2025)</li>
-        <li><b>IPK</b>3.54 / 4.00, Cumlaude</li>
-        <li><b>Minat</b>System and Data Analyst, Web Developer, AI</li>
-      </ul>
-    </div>
-  </div>
+  <h2>Tentang saya</h2>
+  <p class="lead">Saya System &amp; Data Analyst dan Web Developer dengan pengalaman langsung di instansi pemerintahan. Saya tertarik pada integrasi AI, pengambilan keputusan berbasis data, dan sistem digital yang berdampak.</p>
+  <p class="lead">Saya pernah bekerja di Kementerian Keuangan RI sebagai System &amp; Data Analyst, mengembangkan sistem berbasis AI untuk manajemen indikator kinerja, dan di KPU RI sebagai IT Support yang menangani data pemilu dan sistem informasi.</p>
+  <div class="photos" id="tentang-foto"></div>
 </section>
 
-<section id="pengalaman" class="alt">
-  <div class="wrap">
-    <h2>Pengalaman kerja</h2>
-    <ol class="tl">
-      <li>
-        <h3>Kementerian Keuangan Republik Indonesia</h3>
-        <p class="meta">Des 2025 - Jun 2026</p>
-        <p class="role-t">Analis Aplikasi dan Data</p>
-        <p>Mengembangkan sistem berbasis AI untuk manajemen indikator kinerja dan pemetaan talenta pegawai.</p>
-      </li>
-      <li>
-        <h3>Komisi Pemilihan Umum Republik Indonesia</h3>
-        <p class="meta">Feb 2024 - Agu 2024</p>
-        <p class="role-t">IT Support Data</p>
-        <p>Menangani manajemen data pemilu dan sistem informasi, termasuk pengembangan platform pencocokan data penelitian Pilkada 2024.</p>
-      </li>
-    </ol>
-  </div>
+<section id="pengalaman">
+  <h2>Pengalaman kerja</h2>
+  <div class="tl" id="jobs"></div>
 </section>
 
 <section id="project">
-  <div class="wrap">
-    <h2>Project</h2>
-    <ul class="proj">
-      <li>
-        <div class="when">Feb - Mei 2026<small>3 bulan</small></div>
-        <div>
-          <h3>Sirendik</h3>
-          <p class="tag">Rekomendasi IKU cerdas berbasis AI untuk organisasi Kemenkeu</p>
-          <p>Sistem rekomendasi dan deteksi Indikator Kinerja Utama (IKU) untuk mendukung perencanaan kinerja organisasi. Memakai hybrid semantic search (Sentence Transformer + TF-IDF) dan klasifikasi Naive Bayes pada data historis time series kinerja.</p>
-          <ul class="stack"><li>Laravel</li><li>Python Flask</li><li>NLP</li></ul>
-        </div>
-      </li>
-      <li>
-        <div class="when">Jan - Mar 2026<small>2 bulan</small></div>
-        <div>
-          <h3>9 Box of Kemenkeu</h3>
-          <p class="tag">Pemetaan talenta pegawai sesuai regulasi yang berlaku</p>
-          <p>Sistem informasi manajemen kinerja pegawai dengan metode 9-Box Grid sesuai PermenPAN-RB dan PMK Kemenkeu. Dilengkapi role-based access untuk operator, admin, dan super admin di seluruh unit Eselon I.</p>
-          <ul class="stack"><li>Laravel</li><li>Role-based access</li></ul>
-        </div>
-      </li>
-      <li>
-        <div class="when">Apr - Jul 2025<small>4 bulan</small></div>
-        <div>
-          <h3>SiSeKu</h3>
-          <p class="tag">Analisis sentimen publik terhadap kinerja KPU berbasis Twitter</p>
-          <p>Mengolah data Twitter untuk mendeteksi opini masyarakat secara otomatis dengan pemrosesan bahasa alami, memberi gambaran persepsi publik terhadap penyelenggaraan pemilu dan pilkada.</p>
-          <ul class="stack"><li>Laravel</li><li>Flask API</li><li>Naive Bayes</li><li>CRISP-DM</li></ul>
-        </div>
-      </li>
-      <li>
-        <div class="when">Mei - Agu 2024<small>3 bulan</small></div>
-        <div>
-          <h3>SiCoklit</h3>
-          <p class="tag">Platform pencocokan data penelitian Pilkada yang akurat dan terstruktur</p>
-          <p>Sistem informasi untuk mengelola, memverifikasi, dan mencocokkan data hasil penelitian elektoral pada Pilkada 2024 dalam satu platform terintegrasi. Dibimbing Pusdatin Setjen KPU RI.</p>
-          <ul class="stack"><li>Laravel</li><li>Dashboard data</li></ul>
-        </div>
-      </li>
-      <li>
-        <div class="when">Okt - Des 2022<small>2 bulan</small></div>
-        <div>
-          <h3>SiClean</h3>
-          <p class="tag">Solusi digital pemesanan laundry cepat, mudah, dan terorganisir</p>
-          <p>Sistem pemesanan laundry berbasis web untuk Kota Lhokseumawe. Pelanggan memesan dan memantau status cucian secara online, pengelola mengatur pesanan, pembayaran, dan data pelanggan. Dibangun dengan PHP native.</p>
-          <ul class="stack"><li>PHP native</li><li>MySQL</li></ul>
-        </div>
-      </li>
-    </ul>
+  <h2>Project</h2>
+  <div class="pgrid" id="projects"></div>
+</section>
+
+<section id="pendidikan">
+  <h2>Pendidikan</h2>
+  <div class="edu">
+    <div class="row" id="edu-row"></div>
+    <div class="pics" id="edu-pics"></div>
   </div>
 </section>
 
-<section id="keahlian" class="alt">
-  <div class="wrap skills">
-    <h2>Keahlian dan tools</h2>
-    <div class="two">
-      <div>
-        <h3>Keterampilan</h3>
-        <ul class="chips">
-          <li>Interpersonal communication</li><li>Project management</li><li>Problem solving</li>
-          <li>Teamwork</li><li>Leadership</li><li>Analyst</li><li>Editing video dan foto</li>
-        </ul>
-      </div>
-      <div>
-        <h3>Tools</h3>
-        <ul class="chips line">
-          <li>Laravel</li><li>Python</li><li>PHP</li><li>VS Code</li><li>Draw.io</li>
-          <li>Microsoft Word</li><li>Excel</li><li>PowerPoint</li><li>Canva</li><li>CapCut</li>
-        </ul>
-      </div>
-    </div>
-  </div>
+<section id="keahlian">
+  <h2>Keahlian &amp; tools</h2>
+  <div class="skgroup"><h3>Analisis &amp; sistem</h3>
+    <ul class="skills"><li>Analisis &amp; Perancangan Sistem</li><li>Analisis Data</li><li>Visualisasi Data &amp; Dashboard</li><li>Pemodelan Proses &amp; Data (UML, ERD)</li><li>Requirement Gathering</li><li>Dokumentasi Teknis</li></ul></div>
+  <div class="skgroup"><h3>Pengembangan &amp; AI</h3>
+    <ul class="skills"><li>Web Development (PHP, Laravel)</li><li>Python &amp; Flask API</li><li>Basis Data (MySQL)</li><li>Natural Language Processing</li><li>Machine Learning (Naive Bayes, Semantic Search)</li><li>Metodologi CRISP-DM</li></ul></div>
+  <div class="skgroup"><h3>Profesional</h3>
+    <ul class="skills"><li>Project Management</li><li>Problem Solving</li><li>Interpersonal Communication</li><li>Teamwork &amp; Leadership</li><li>Presentasi ke Stakeholder</li><li>Editing (video, foto)</li></ul></div>
+  <div class="sk-tools"><h3>Tools</h3><ul class="tools big" id="all-tools"></ul></div>
 </section>
 
 <section id="sertifikasi">
-  <div class="wrap">
-    <h2>Sertifikasi</h2>
-    <div class="cert">
-      <div class="seal" aria-hidden="true">BNSP</div>
-      <div>
-        <h3>Pengembang Web (Web Developer)</h3>
-        <p>Sertifikat Kompetensi BNSP, diterbitkan LSP Politeknik Negeri Lhokseumawe. Berlaku Agustus 2025 - Agustus 2028.</p>
-      </div>
+  <h2>Sertifikasi</h2>
+  <div class="cert">
+    <div class="ph" data-file="images/sertifikat.png" data-lightbox data-title="Sertifikat Kompetensi BNSP Web Developer" data-description="Sertifikasi BNSP Web Developer yang tercantum pada portfolio."><img src="images/sertifikat.png" alt="Sertifikat Kompetensi BNSP Web Developer" loading="lazy"></div>
+    <div><h3>BNSP Sertifikasi</h3><p class="lead">Web Developer / Pengembang Web</p><p class="muted">Berlaku Agu 2025 - Agu 2028</p></div>
+  </div>
+</section>
+<footer>&copy; 2026 Rayhan Dzulna Fahlevi</footer>
+</main>
+</div>
+
+<!-- ===== PROJECT POPUP ===== -->
+<div class="pmodal" id="projectModal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Detail project">
+  <div class="pbox"><button class="pclose" id="projectClose" type="button" aria-label="Tutup">&times;</button><div id="projectBody"></div></div>
+</div>
+
+<!-- ===== IMAGE POPUP ===== -->
+<div class="lightbox" id="imageLightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Preview gambar">
+  <div class="lightbox-panel">
+    <div class="lightbox-media">
+      <button class="lightbox-close" id="lightboxClose" type="button" aria-label="Tutup">&times;</button>
+      <img id="lightboxImage" src="" alt="">
+    </div>
+    <div class="lightbox-info">
+      <h3 id="lightboxTitle">Preview Gambar</h3>
+      <p id="lightboxDescription"></p>
     </div>
   </div>
-</section>
+</div>
 
-<section id="kontak" class="contact">
-  <div class="wrap">
-    <h2>Mari berkolaborasi</h2>
-    <p>Terbuka untuk peluang di bidang sistem informasi, analisis data, dan pengembangan web.</p>
-    <!-- Ganti tautan di bawah dengan kontak Anda -->
-    <a class="btn main" href="mailto:emailanda@example.com">Kirim email</a>
-    <a class="btn" href="https://www.linkedin.com/in/username-anda" target="_blank" rel="noopener">LinkedIn</a>
-    <a class="btn" href="https://github.com/username-anda" target="_blank" rel="noopener">GitHub</a>
+<!-- ===== CONTACT POPUP ===== -->
+<div class="contact-modal" id="contactModal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Kontak saya">
+  <div class="contact-box">
+    <button class="contact-close" id="contactClose" type="button" aria-label="Tutup">&times;</button>
+    <h3>Kontak saya</h3>
+    <dl>
+      <div><div><dt>Email</dt><dd><a href="mailto:dzulnafahlvi@gmail.com">dzulnafahlvi@gmail.com</a></dd></div>
+        <button type="button" class="copy-btn" data-copy="dzulnafahlvi@gmail.com">Salin</button></div>
+      <div><div><dt>WhatsApp</dt><dd><a href="https://wa.me/628129301212" target="_blank" rel="noopener">081292301212</a></dd></div>
+        <button type="button" class="copy-btn" data-copy="081292888888">Salin</button></div>
+    </dl>
   </div>
-</section>
+</div>
 
-<footer>&copy; 2026 Rayhan Dzulna Fahlevi</footer>
+<script>
+/* ===== DATA: ubah di sini ===== */
+var T={ /* nama file ikon tools: letakkan di folder images/tools/ */
+ word:["Word","images/tools/word.png"],excel:["Excel","images/tools/excel.png"],ppt:["PowerPoint","images/tools/powerpoint.png"],
+ canva:["Canva","images/tools/canva.png"],capcut:["CapCut","images/tools/capcut.png"],vs:["VS Code","images/tools/vscode.png"],
+ laravel:["Laravel","images/tools/laravel.png"],py:["Python","images/tools/python.png"],draw:["Draw.io","images/tools/drawio.png"],
+ flask:["Flask","images/tools/flask.png"],mysql:["MySQL","images/tools/mysql.png"],git:["Git","images/tools/git.png"]};
+/* urutan: terbaru di atas. y = bulan & tahun selesai (tampil di kartu) */
+var P=[
+{t:"Sirendik",y:"Mei 2026",s:"Rekomendasi IKU Cerdas Berbasis AI untuk Organisasi Kemenkeu",tag:"Project 5",o:"Kementerian Keuangan RI",m:"Biro SDM Setjen Kementerian Keuangan",d:"3 bulan (Feb - Mei 2026)",
+   x:["Sirendik adalah sistem rekomendasi dan deteksi Indikator Kinerja Utama (IKU) berbasis AI untuk perencanaan kinerja organisasi.","Dibangun dengan Laravel dan Python Flask. Memakai hybrid semantic search (Sentence Transformer + TF-IDF) dan klasifikasi Naive Bayes pada data historis time series kinerja.","Sistem mampu menganalisis pola kinerja historis unit kerja, memberikan rekomendasi IKU yang relevan, terukur, dan sesuai dengan Rencana Strategis Kemenkeu.","Fitur utama meliputi deteksi otomatis IKU yang kurang optimal, generasirekomendasi berbasis kemiripan semantik, serta dashboard visualisasi performa organisasi secara real-time."],
+   tl:["vs","draw","py","laravel","canva"],f:"sirendik",n:4,a:["Halaman login","Rekomendasi IKU","Manajemen data latih","Hasil rekomendasi IKU"]},
+  
+  {t:"9 Box of Kemenkeu",y:"Mar 2026",s:"Pemetaan Talenta Pegawai Kemenkeu Sesuai Regulasi yang Berlaku",tag:"Project 4",o:"Kementerian Keuangan RI",m:"Biro SDM Setjen Kementerian Keuangan",d:"2 bulan (Jan - Mar 2026)",
+   x:["Sistem informasi manajemen kinerja pegawai berbasis web yang menerapkan metode 9-Box Grid sesuai PermenPAN-RB dan PMK Kemenkeu.","Memetakan talenta berdasarkan dimensi kinerja dan potensi, dengan role-based access untuk operator, admin, dan super admin di seluruh unit Eselon I.","Sistem mendukung proses talent mapping secara objektif, memudahkan identifikasi high-potential employee, serta menjadi dasar pengambilan keputusan pengembangan karier dan mutasi.","Terdapat modul input data kinerja & potensi, visualisasi matriks 9-Box interaktif, serta laporan analitik yang dapat diekspor untuk keperluan pimpinan."],
+   tl:["vs","draw","laravel","canva"],f:"9box",n:3,a:["Halaman login","Dashboard Pemetaan Talenta Pegawai","Input Data Pegawai"]},
+  
+  {t:"SiSeKu",y:"Jul 2025",s:"Analisis Sentimen Publik terhadap Kinerja KPU Berbasis Twitter",tag:"Project 3",o:"Setjen KPU RI",m:"Politeknik Negeri Lhokseumawe & Pusdatin Setjen KPU RI",d:"4 bulan (Apr - Jul 2025)",
+   x:["SiSeKu menganalisis sentimen publik terhadap kinerja KPU saat pemilu dan pilkada. Dibangun dengan Laravel dan terintegrasi Flask API.","Sistem mengolah data Twitter dengan pemrosesan bahasa alami untuk mendeteksi opini masyarakat secara otomatis dan real-time.","Menggunakan teknik text preprocessing, feature extraction, dan model machine learning untuk mengklasifikasikan sentimen positif, negatif, maupun netral.","Hasil analisis disajikan dalam bentuk dashboard interaktif yang menampilkan tren sentimen harian, topik yang sedang ramai dibicarakan, serta perbandingan sentimen antar wilayah."],
+   tl:["vs","draw","py","laravel","canva"],f:"siseku",n:6,a:["Metode CRISP-DM","arsitektur sistem","Data Tweet sebagai sentimen","dashboard sentimen","Uji sentimen Pilkada 2024","Evaluasi model"]},
+  
+  {t:"SiCoklit",y:"Agu 2024",s:"Platform Pencocokan Data Penelitian Pilkada yang Akurat dan Terstruktur",tag:"Project 2",o:"Setjen KPU RI",m:"Pusdatin Setjen KPU RI",d:"3 bulan (Mei - Agu 2024)",
+   x:["SiCoklit adalah sistem informasi web berbasis Laravel untuk mendukung pencocokan data penelitian pada Pilkada 2024.","KPU dapat mengelola, memverifikasi, dan mencocokkan data hasil penelitian elektoral dalam satu platform terintegrasi.","Sistem dilengkapi fitur unggah data massal, validasi otomatis, pencocokan data antar sumber, serta rekapitulasi hasil yang dapat diekspor.","Dirancang untuk mempercepat proses pencocokan data pemilih dan hasil penelitian lapangan, sekaligus mengurangi kesalahan manual yang sering terjadi."],
+   tl:["vs","draw","laravel","canva"],f:"sicoklit",n:5,a:["Mendatangi PPS persiapan Pilkada 2024","halaman login","dashboard","Rekapitulasi Daftar Pemilih","Daftar Data Pemilih"]},
+  
+  {t:"SiClean",y:"Des 2022",s:"Solusi Digital Pemesanan Laundry Cepat, Mudah, dan Terorganisir",tag:"Project 1",o:"SiClean - Kota Lhokseumawe",m:"Program Studi Teknik Informatika PNL",d:"2 bulan (Okt - Des 2022)",
+   x:["SiClean adalah sistem pemesanan layanan laundry berbasis web yang dibangun dengan PHP native.","Pelanggan bisa memesan online dan memantau status cucian. Pengelola laundry mengelola pesanan, pembayaran, dan data pelanggan secara digital.","Fitur utama mencakup form pemesanan online, tracking status cucian secara real-time, manajemen paket layanan, serta laporan transaksi harian.","Sistem ini membantu usaha laundry lokal beralih dari pencatatan manual ke digital, sehingga lebih efisien dan meminimalkan kesalahan pencatatan."],
+   tl:["vs","draw","canva"],f:"siclean",n:3,a:["Wawancara pelaku usaha","Form Pemesanan","Tampilan Aplikasi"]}
+];
 
+/* ===== RENDER ===== */
+function $(i){return document.getElementById(i)}
+function ph(src,alt,cls,lazy,lb){
+  return '<span class="ph '+(cls||'')+'" data-file="'+src+'"'+(lb===false?'':' data-lightbox data-title="'+alt.replace(/"/g,'&quot;')+'" data-description="Klik gambar untuk melihat tampilan lebih besar."')+'><img src="'+src+'" alt="'+alt.replace(/"/g,'&quot;')+'"'+(lazy?' loading="lazy"':'')+'></span>'
+}
+function tool(k){var v=T[k];return '<li class="tool" data-file="'+v[1]+'"><img src="'+v[1]+'" alt=""><span>'+v[0]+'<span class="fn">'+v[1]+'</span></span></li>'}
+function fixImgs(root){
+  root.querySelectorAll('[data-file] img').forEach(function(img){
+    var box=img.closest('[data-file]'),ok=function(){box.classList.add('ok')},bad=function(){img.remove()};
+    if(img.complete){img.naturalWidth?ok():bad()}else{img.addEventListener('load',ok);img.addEventListener('error',bad)}
+  });
+}
+function syncScroll(){document.body.style.overflow=document.querySelector('.lightbox.show,.contact-modal.show,.pmodal.show')?'hidden':''}
+
+var h='';["Saya & Rektor PNL pada saat Wisuda","Pada Saat Yudisium ","Rayhan bersama rekan kerja KPU RI","Saya bersama Wakil Rektor","Saya bersama rekan kerja Kementerian Keuangan"].forEach(function(a,i){h+=ph("images/tentang-"+(i+1)+".png",a,"",1)});
+$("tentang-foto").innerHTML=h;
+$("jobs").innerHTML=[["images/logo-kemenkeu.png","Logo Kementerian Keuangan","Kementerian Keuangan Republik Indonesia","Analis Aplikasi dan Data","Des 2025 - Jun 2026"],["images/logo-kpu.png","Logo KPU RI","Komisi Pemilihan Umum Republik Indonesia","IT Support Data","Feb 2024 - Agu 2024"]].map(function(j){return '<div class="job">'+ph(j[0],j[1],"ct",0,false)+'<div><h3>'+j[2]+'</h3><p>'+j[3]+'</p><p>'+j[4]+'</p></div></div>'}).join("");
+
+/* kartu project: cover dari images/cover/<kode>.png, nama, bulan & tahun */
+$("projects").innerHTML=P.map(function(p,i){
+  return '<button type="button" class="pcard" data-idx="'+i+'" aria-label="Lihat detail '+p.t+'">'+ph("images/cover/"+p.f+".png",p.t,"",1,false)+
+  '<div class="pb"><h3>'+p.t+'</h3><div class="pd"><span>'+p.y+'</span><span class="go">Lihat detail</span></div></div></button>'}).join("");
+
+$("edu-row").innerHTML=ph("images/logo-pnl.png","Logo Politeknik Negeri Lhokseumawe","ct",0,false)+'<div><h3>Politeknik Negeri Lhokseumawe</h3><p>Teknik Informatika, 2021-2025</p><p class="muted">IPK 3.54/4.00 (Cumlaude)<br>Minat: System and Data Analyst, Web Developer, AI</p></div>';
+$("edu-pics").innerHTML=ph("images/tentang-1.png","Wisuda Politeknik Negeri Lhokseumawe","",1)+ph("images/tentang-4.png","Penyerahan ijazah wisuda","",1);
+$("all-tools").innerHTML=Object.keys(T).map(tool).join("");
+$("profile").innerHTML='<img src="images/profile.png" alt="Foto Rayhan Dzulna Fahlevi" style="width:190px;height:180px;object-fit:cover;border-radius:50%" onerror="this.remove();this.parentNode.classList.remove(\'ok\')">';
+$("profile").style.cssText="background:#1b2d47;display:block;overflow:hidden";
+
+/* ===== PROJECT POPUP ===== */
+(function(){
+  var m=$("projectModal");
+  function openP(i){
+    var p=P[i],s='';
+    for(var k=1;k<=p.n;k++)s+=ph("images/"+p.f+"-"+k+".png",p.t+": "+p.a[k-1],"",1);
+    $("projectBody").innerHTML='<header><h3>'+p.t+'</h3><span class="tag">'+p.y+'</span></header><p class="sub">'+p.s+'</p>'+
+      p.x.map(function(t){return '<p>'+t+'</p>'}).join("")+
+      '<dl class="meta"><div><dt>Instansi</dt><dd>'+p.o+'</dd></div><div><dt>Mentor</dt><dd>'+p.m+'</dd></div><div><dt>Durasi</dt><dd>'+p.d+'</dd></div></dl>'+
+      '<ul class="tools">'+p.tl.map(tool).join("")+'</ul><div class="shots">'+s+'</div>';
+    fixImgs($("projectBody"));
+    m.scrollTop=0;
+    m.classList.add("show");m.setAttribute("aria-hidden","false");syncScroll();$("projectClose").focus();
+  }
+  function closeP(){m.classList.remove("show");m.setAttribute("aria-hidden","true");syncScroll()}
+  $("projects").addEventListener("click",function(e){var c=e.target.closest(".pcard");if(c)openP(+c.getAttribute("data-idx"))});
+  $("projectClose").addEventListener("click",closeP);
+  m.addEventListener("click",function(e){if(e.target===m)closeP()});
+  document.addEventListener("keydown",function(e){if(e.key==="Escape"&&m.classList.contains("show"))closeP()});
+})();
+
+/* ===== IMAGE POPUP ===== */
+(function(){
+  var lb=$("imageLightbox"),im=$("lightboxImage"),tt=$("lightboxTitle"),ds=$("lightboxDescription"),cb=$("lightboxClose");
+  function openL(el){
+    var img=el.querySelector("img");if(!img)return;
+    im.src=img.currentSrc||img.src;im.alt=img.alt||"";
+    tt.textContent=el.getAttribute("data-title")||img.alt||"Preview Gambar";
+    ds.textContent=el.getAttribute("data-description")||"Preview gambar portfolio.";
+    lb.classList.add("show");lb.setAttribute("aria-hidden","false");syncScroll();cb.focus();
+  }
+  function closeL(){lb.classList.remove("show");lb.setAttribute("aria-hidden","true");im.src="";syncScroll()}
+  document.addEventListener("click",function(e){
+    var t=e.target.closest("[data-lightbox]");
+    if(t&&!lb.contains(t))openL(t);
+  });
+  cb.addEventListener("click",closeL);
+  lb.addEventListener("click",function(e){if(e.target===lb)closeL()});
+  /* listener ini terdaftar lebih dulu: Esc hanya menutup popup gambar, bukan popup project di bawahnya */
+  document.addEventListener("keydown",function(e){
+    if(e.key==="Escape"&&lb.classList.contains("show")){closeL();e.stopImmediatePropagation()}
+  });
+})();
+
+/* ===== CONTACT POPUP + SALIN ===== */
+(function(){
+  var m=$("contactModal");
+  function openC(){m.classList.add("show");m.setAttribute("aria-hidden","false");syncScroll();$("contactClose").focus()}
+  function closeC(){m.classList.remove("show");m.setAttribute("aria-hidden","true");syncScroll()}
+  $("contactBtn").addEventListener("click",openC);
+  $("contactClose").addEventListener("click",closeC);
+  m.addEventListener("click",function(e){if(e.target===m)closeC()});
+  document.addEventListener("keydown",function(e){if(e.key==="Escape"&&m.classList.contains("show"))closeC()});
+
+  function fallbackCopy(txt){
+    var ta=document.createElement("textarea");ta.value=txt;ta.style.cssText="position:fixed;opacity:0";
+    document.body.appendChild(ta);ta.select();var ok=false;
+    try{ok=document.execCommand("copy")}catch(e){}
+    document.body.removeChild(ta);return ok;
+  }
+  function flash(btn,ok){
+    var old=btn.getAttribute("data-label")||btn.textContent;btn.setAttribute("data-label",old);
+    btn.textContent=ok?"Tersalin":"Gagal";btn.classList.toggle("done",ok);
+    clearTimeout(btn._t);btn._t=setTimeout(function(){btn.textContent=old;btn.classList.remove("done")},1600);
+  }
+  m.addEventListener("click",function(e){
+    var btn=e.target.closest(".copy-btn");if(!btn)return;
+    var txt=btn.getAttribute("data-copy");
+    if(navigator.clipboard&&window.isSecureContext){
+      navigator.clipboard.writeText(txt).then(function(){flash(btn,true)},function(){flash(btn,fallbackCopy(txt))});
+    }else flash(btn,fallbackCopy(txt));
+  });
+})();
+
+fixImgs(document);
+/* tandai menu aktif */
+var links=[].slice.call(document.querySelectorAll('aside nav a'));
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)links.forEach(function(a){a.classList.toggle('on',a.getAttribute('href')==='#'+e.target.id)})})},{rootMargin:'-30% 0px -60% 0px'});
+document.querySelectorAll('main section').forEach(function(s){io.observe(s)});
+</script>
 </body>
-</html> 
+</html>
