@@ -374,7 +374,7 @@ var P=[
 /* ===== RENDER ===== */
 function $(i){return document.getElementById(i)}
 function ph(src,alt,cls,lazy,lb){
-  return '<span class="ph '+(cls||'')+'" data-file="'+src+'"'+(lb===false?'':' data-lightbox data-title="'+alt.replace(/"/g,'&quot;')+'" data-description="Klik gambar untuk melihat tampilan lebih besar."')+'><img src="'+src+'" alt="'+alt.replace(/"/g,'&quot;')+'"'+(lazy?' loading="lazy"':'')+'></span>'
+  return '<span class="ph '+(cls||'')+'" data-file="'+src+'"'+(lb===false?'':' data-lightbox data-title="'+alt.replace(/"/g,'&quot;'))+'><img src="'+src+'" alt="'+alt.replace(/"/g,'&quot;')+'"'+(lazy?' loading="lazy"':'')+'></span>'
 }
 function tool(k){var v=T[k];return '<li class="tool" data-file="'+v[1]+'"><img src="'+v[1]+'" alt=""><span>'+v[0]+'<span class="fn">'+v[1]+'</span></span></li>'}
 function fixImgs(root){
