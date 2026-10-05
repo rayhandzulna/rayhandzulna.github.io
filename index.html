@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html>PU RI
 <html lang="id">
 <head>
 <meta charset="UTF-8">
@@ -374,7 +374,7 @@ var P=[
 /* ===== RENDER ===== */
 function $(i){return document.getElementById(i)}
 function ph(src,alt,cls,lazy,lb){
-  return '<span class="ph '+(cls||'')+'" data-file="'+src+'"'+(lb===false?'':' data-lightbox data-title="'+alt.replace(/"/g,'&quot;'))+'><img src="'+src+'" alt="'+alt.replace(/"/g,'&quot;')+'"'+(lazy?' loading="lazy"':'')+'></span>'
+  return '<span class="ph '+(cls||'')+'" data-file="'+src+'"'+(lb===false?'':' data-lightbox data-title="'+alt.replace(/"/g,'&quot;')+'" "')+'><img src="'+src+'" alt="'+alt.replace(/"/g,'&quot;')+'"'+(lazy?' loading="lazy"':'')+'></span>'
 }
 function tool(k){var v=T[k];return '<li class="tool" data-file="'+v[1]+'"><img src="'+v[1]+'" alt=""><span>'+v[0]+'<span class="fn">'+v[1]+'</span></span></li>'}
 function fixImgs(root){
@@ -385,7 +385,7 @@ function fixImgs(root){
 }
 function syncScroll(){document.body.style.overflow=document.querySelector('.lightbox.show,.contact-modal.show,.pmodal.show')?'hidden':''}
 
-var h='';["Saya & Rektor PNL pada saat Wisuda","Pada Saat Yudisium ","Rayhan bersama rekan kerja KPU RI","Saya bersama Wakil Rektor","Saya bersama rekan kerja Kementerian Keuangan"].forEach(function(a,i){h+=ph("images/tentang-"+(i+1)+".png",a,"",1)});
+var h='';["Saya & Rektor PNL pada saat Wisuda","Pada Saat Yudisium ","Bersama Anggota KPU RI Ibu Betty Epsilon Idroos","Saya bersama Wakil Rektor","Saya bersama rekan kerja Kementerian Keuangan"].forEach(function(a,i){h+=ph("images/tentang-"+(i+1)+".png",a,"",1)});
 $("tentang-foto").innerHTML=h;
 $("jobs").innerHTML=[["images/logo-kemenkeu.png","Logo Kementerian Keuangan","Kementerian Keuangan Republik Indonesia","Analis Aplikasi dan Data","Des 2025 - Jun 2026"],["images/logo-kpu.png","Logo KPU RI","Komisi Pemilihan Umum Republik Indonesia","IT Support Data","Feb 2024 - Agu 2024"]].map(function(j){return '<div class="job">'+ph(j[0],j[1],"ct",0,false)+'<div><h3>'+j[2]+'</h3><p>'+j[3]+'</p><p>'+j[4]+'</p></div></div>'}).join("");
 
@@ -428,7 +428,7 @@ $("profile").innerHTML='<img src="images/profile.png" alt="Foto Rayhan Dzulna Fa
     var img=el.querySelector("img");if(!img)return;
     im.src=img.currentSrc||img.src;im.alt=img.alt||"";
     tt.textContent=el.getAttribute("data-title")||img.alt||"Preview Gambar";
-    ds.textContent=el.getAttribute("data-description")||"Preview gambar portfolio.";
+    // ds.textContent=el.getAttribute("data-description")||"Preview gambar portfolio.";
     lb.classList.add("show");lb.setAttribute("aria-hidden","false");syncScroll();cb.focus();
   }
   function closeL(){lb.classList.remove("show");lb.setAttribute("aria-hidden","true");im.src="";syncScroll()}
