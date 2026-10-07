@@ -263,7 +263,7 @@ footer{border-top:1px solid var(--line);padding:24px 0;color:var(--muted);font-s
 <section id="tentang">
   <h2>Tentang saya</h2>
   <p class="lead">Saya System &amp; Data Analyst dan Web Developer dengan pengalaman langsung di lingkungan instansi pemerintah. Fokus saya adalah merancang sistem informasi dan solusi berbasis data, termasuk pemanfaatan AI, untuk mendukung pengambilan keputusan yang lebih akurat dan berdampak.</p>
-  <p class="lead">Di Kementerian Keuangan RI, saya bertugas sebagai System &amp; Data Analyst dan mengembangkan sistem berbasis AI untuk pengelolaan indikator kinerja. Sebelumnya, di KPU RI, saya bertugas sebagai IT Support Data yang menangani data kepemiluan serta sistem informasi pendukungnya.</p>
+  <p class="lead">Di Kementerian Keuangan RI, saya bertugas sebagai System &amp; Data Analyst dan mengembangkan sistem berbasis AI untuk pengelolaan indikator kinerja. Sebelumnya, di KPU RI, saya bertugas sebagai IT Support yang menangani data kepemiluan serta sistem informasi pendukungnya.</p>
   <div class="photos" id="tentang-foto"></div>
 </section>
 
@@ -387,7 +387,7 @@ function syncScroll(){document.body.style.overflow=document.querySelector('.ligh
 
 var h='';["Saya & Rektor PNL pada saat Wisuda","Pada Saat Yudisium ","Bersama Anggota KPU RI Ibu Betty Epsilon Idroos","Saya bersama Wakil Rektor","Saya bersama rekan kerja Kementerian Keuangan"].forEach(function(a,i){h+=ph("images/tentang-"+(i+1)+".png",a,"",1)});
 $("tentang-foto").innerHTML=h;
-$("jobs").innerHTML=[["images/logo-kemenkeu.png","Logo Kementerian Keuangan","Kementerian Keuangan Republik Indonesia","Analis Aplikasi dan Data","Des 2025 - Jun 2026"],["images/logo-kpu.png","Logo KPU RI","Komisi Pemilihan Umum Republik Indonesia","IT Support Data","Feb 2024 - Agu 2024"]].map(function(j){return '<div class="job">'+ph(j[0],j[1],"ct",0,false)+'<div><h3>'+j[2]+'</h3><p>'+j[3]+'</p><p>'+j[4]+'</p></div></div>'}).join("");
+$("jobs").innerHTML=[["images/logo-kemenkeu.png","Logo Kementerian Keuangan","Kementerian Keuangan Republik Indonesia","Analis Aplikasi dan Data","Des 2025 - Jun 2026"],["images/logo-kpu.png","Logo KPU RI","Komisi Pemilihan Umum Republik Indonesia","IT Support","Feb 2024 - Agu 2024"]].map(function(j){return '<div class="job">'+ph(j[0],j[1],"ct",0,false)+'<div><h3>'+j[2]+'</h3><p>'+j[3]+'</p><p>'+j[4]+'</p></div></div>'}).join("");
 
 /* kartu project: cover dari images/cover/<kode>.png, nama, bulan & tahun */
 $("projects").innerHTML=P.map(function(p,i){
