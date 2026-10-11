@@ -347,9 +347,15 @@ var T={ /* nama file ikon tools: letakkan di folder images/tools/ */
  word:["Word","images/tools/word.png"],excel:["Excel","images/tools/excel.png"],ppt:["PowerPoint","images/tools/powerpoint.png"],
  canva:["Canva","images/tools/canva.png"],capcut:["CapCut","images/tools/capcut.png"],vs:["VS Code","images/tools/vscode.png"],
  laravel:["Laravel","images/tools/laravel.png"],py:["Python","images/tools/python.png"],draw:["Draw.io","images/tools/drawio.png"],
- flask:["Flask","images/tools/flask.png"],mysql:["MySQL","images/tools/mysql.png"],git:["Git","images/tools/git.png"]};
-/* urutan: terbaru di atas. y = bulan & tahun selesai (tampil di kartu) */
+ flask:["Flask","images/tools/flask.png"],mysql:["MySQL","images/tools/mysql.png"],git:["Git","images/tools/git.png"],
+ php1:["PHP","images/tools/php.png"],xampp:["XAMPP","images/tools/xampp.png"]};
+/* urutan: terbaru di atas. y = bulan & tahun selesai (tampil di kartu).
+   c (opsional) = path cover kartu; jika kosong dipakai images/cover/<f>.png */
 var P=[
+{t:"Protulis Web Stocking",y:"Sep 2026",s:"Sistem Stocking Gudang ATK Berbasis Web untuk Pencatatan Barang dan Monitoring Laporan",tag:"Project 6",o:"Toko ATK Protulis",m:"Owner Toko ATK Protulis",d:"2 bulan (Agu - Sep 2026)",
+   x:["Protulis Web Stocking adalah sistem informasi berbasis web untuk mencatat barang masuk dan barang keluar, layaknya stocking pada gudang ATK.","Owner toko membutuhkan laporan yang mudah dimonitor, sehingga sistem menyediakan laporan transaksi, laporan keuangan, dan laporan stok.","Sistem berbasis lokal karena penggunaannya hanya dalam lingkup toko, sehingga tidak memerlukan hosting atau koneksi internet.","Dibangun dengan Laravel dan dijalankan pada lingkungan lokal menggunakan XAMPP."],
+   tl:["laravel","mysql","draw","php1"],f:"protulis",c:"images/protulis-2.png",n:6,a:["Halaman login","Dashboard","Data barang","Barang masuk","Barang keluar","Laporan"]},
+
 {t:"Sirendik",y:"Mei 2026",s:"Rekomendasi IKU Cerdas Berbasis AI untuk Organisasi Kemenkeu",tag:"Project 5",o:"Kementerian Keuangan RI",m:"Biro SDM Setjen Kementerian Keuangan",d:"3 bulan (Feb - Mei 2026)",
    x:["Sirendik adalah sistem rekomendasi dan deteksi Indikator Kinerja Utama (IKU) berbasis AI untuk perencanaan kinerja organisasi.","Dibangun dengan Laravel dan Python Flask. Memakai hybrid semantic search (Sentence Transformer + TF-IDF) dan klasifikasi Naive Bayes pada data historis time series kinerja.","Sistem mampu menganalisis pola kinerja historis unit kerja, memberikan rekomendasi IKU yang relevan, terukur, dan sesuai dengan Rencana Strategis Kemenkeu.","Fitur utama meliputi deteksi otomatis IKU yang kurang optimal, generasi rekomendasi berbasis kemiripan semantik, serta dashboard visualisasi performa organisasi secara real-time."],
    tl:["vs","draw","py","laravel","canva"],f:"sirendik",n:4,a:["Halaman login","Rekomendasi IKU","Manajemen data latih","Hasil rekomendasi IKU"]},
@@ -374,7 +380,7 @@ var P=[
 /* ===== RENDER ===== */
 function $(i){return document.getElementById(i)}
 function ph(src,alt,cls,lazy,lb){
-  return '<span class="ph '+(cls||'')+'" data-file="'+src+'"'+(lb===false?'':' data-lightbox data-title="'+alt.replace(/"/g,'&quot;')+'" "')+'><img src="'+src+'" alt="'+alt.replace(/"/g,'&quot;')+'"'+(lazy?' loading="lazy"':'')+'></span>'
+  return '<span class="ph '+(cls||'')+'" data-file="'+src+'"'+(lb===false?'':' data-lightbox data-title="'+alt.replace(/"/g,'&quot;')+'"')+'><img src="'+src+'" alt="'+alt.replace(/"/g,'&quot;')+'"'+(lazy?' loading="lazy"':'')+'></span>'
 }
 function tool(k){var v=T[k];return '<li class="tool" data-file="'+v[1]+'"><img src="'+v[1]+'" alt=""><span>'+v[0]+'<span class="fn">'+v[1]+'</span></span></li>'}
 function fixImgs(root){
@@ -389,9 +395,9 @@ var h='';["Saya & Rektor PNL pada saat Wisuda","Pada Saat Yudisium ","Bersama An
 $("tentang-foto").innerHTML=h;
 $("jobs").innerHTML=[["images/logo-kemenkeu.png","Logo Kementerian Keuangan","Kementerian Keuangan Republik Indonesia","Analis Aplikasi dan Data","Des 2025 - Jun 2026"],["images/logo-kpu.png","Logo KPU RI","Komisi Pemilihan Umum Republik Indonesia","IT Support","Feb 2024 - Agu 2024"]].map(function(j){return '<div class="job">'+ph(j[0],j[1],"ct",0,false)+'<div><h3>'+j[2]+'</h3><p>'+j[3]+'</p><p>'+j[4]+'</p></div></div>'}).join("");
 
-/* kartu project: cover dari images/cover/<kode>.png, nama, bulan & tahun */
+/* kartu project: cover dari p.c (jika ada) atau images/cover/<kode>.png, nama, bulan & tahun */
 $("projects").innerHTML=P.map(function(p,i){
-  return '<button type="button" class="pcard" data-idx="'+i+'" aria-label="Lihat detail '+p.t+'">'+ph("images/cover/"+p.f+".png",p.t,"",1,false)+
+  return '<button type="button" class="pcard" data-idx="'+i+'" aria-label="Lihat detail '+p.t+'">'+ph(p.c||("images/cover/"+p.f+".png"),p.t,"",1,false)+
   '<div class="pb"><h3>'+p.t+'</h3><div class="pd"><span>'+p.y+'</span><span class="go">Lihat detail</span></div></div></button>'}).join("");
 
 $("edu-row").innerHTML=ph("images/logo-pnl.png","Logo Politeknik Negeri Lhokseumawe","ct",0,false)+'<div><h3>Politeknik Negeri Lhokseumawe</h3><p>Teknik Informatika, 2021-2025</p><p class="muted">IPK 3.54/4.00 (Cumlaude)<br>Minat: System and Data Analyst, Web Developer, AI</p></div>';
