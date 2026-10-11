@@ -414,7 +414,7 @@ $("profile").innerHTML='<img src="images/profile.png" alt="Foto Rayhan Dzulna Fa
     for(var k=1;k<=p.n;k++)s+=ph("images/"+p.f+"-"+k+".png",p.t+": "+p.a[k-1],"",1);
     $("projectBody").innerHTML='<header><h3>'+p.t+'</h3><span class="tag">'+p.y+'</span></header><p class="sub">'+p.s+'</p>'+
       p.x.map(function(t){return '<p>'+t+'</p>'}).join("")+
-      '<dl class="meta"><div><dt>Instansi</dt><dd>'+p.o+'</dd></div><div><dt>Mentor</dt><dd>'+p.m+'</dd></div><div><dt>Durasi</dt><dd>'+p.d+'</dd></div></dl>'+
+      '<dl class="meta"><div><dt>Instansi/Tempat</dt><dd>'+p.o+'</dd></div><div><dt>Mentor</dt><dd>'+p.m+'</dd></div><div><dt>Durasi</dt><dd>'+p.d+'</dd></div></dl>'+
       '<ul class="tools">'+p.tl.map(tool).join("")+'</ul><div class="shots">'+s+'</div>';
     fixImgs($("projectBody"));
     m.scrollTop=0;
